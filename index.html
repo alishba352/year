@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year</title>
+</head>
+<body>
+    
+    <style>
+        /* Body and Background Style */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f8686d;
+            background: -webkit-linear-gradient(to right, #f8686d, #fd9497);
+            background: linear-gradient(to right, #f8686d,#fd9497);
+            font-family: 'Arial', sans-serif;
+            color: white;
+            text-align: center;
+            overflow: scroll;
+        }
+
+
+
+
+        /* Message Box Style */
+        .message-box {
+            max-width: 800px;
+            margin-top: -80px;
+            padding: 20px;
+            background-color: #f86469;
+            border-radius: 10px;
+            box-shadow: 0 0 20px #b45a5d;
+            opacity: 0;
+            animation: fadeIn 3s forwards;
+        }
+
+        /* Header Style */
+        h1 {
+            font-size: 4rem;
+            margin: 0;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        /* Paragraph Style */
+        p {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            margin-top: 20px;
+            animation: fadeInText 5s forwards;
+        }
+
+        /* Animation for Fade-in Effect */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInText {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* New Year Countdown Style */
+        /* .countdown {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #FFD700;
+            margin-top: 20px;
+            animation: fadeIn 3s forwards;
+        } */
+
+        /* Button to Restart the Countdown */
+        /* .restart-btn {
+            margin-top: 30px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            background-color: #ff797e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .restart-btn:hover {
+            background-color: #f85056;
+        } */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            overflow: scroll;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .button {
+            display: inline;
+            padding: 15px 30px;
+            margin-top: 350px;
+            margin-left: -800px;
+            font-size: 1.5rem;
+            color: white;
+            background-color: #f8575c;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .button:hover {
+            background-color:#fa6066;
+            transform: scale(1.1);
+        }
+
+        /* responsive */
+        @media(max-width:500px){
+            .message-box{
+                width: 350px;
+            }
+
+            .button{
+                margin-top: 700px;
+                margin-right: -380px;
+            }
+        }
+    </style>
+
+
+    <div class="message-box">
+        <h1>Happy New Year, My Crime Partner!</h1>
+        <p>
+            A New Year means new adventures, and I couldn't ask for a better partner-in-crime.<br>
+            Always stay with me. If you leave, I will never believe in friendship.<br>
+            You are the most beautiful part of my life.
+        </p>
+
+        <!-- <div class="countdown" id="countdown"></div>
+
+        <button class="restart-btn" id="restart-btn" onclick="startCountdown()">Restart Countdown</button> -->
+    </div>
+
+    <div class="container">
+        <button class="button" onclick="goToNextPage()">Touch Me Babes</button>
+    </div>
+
+    <script>
+        // Countdown logic
+        function startCountdown() {
+            const countdownElement = document.getElementById("countdown");
+            let secondsLeft = 10;  // Countdown starts at 10 seconds
+
+            // Update countdown every second
+            const interval = setInterval(function() {
+                countdownElement.textContent = `New Year Countdown: ${secondsLeft}...`;
+
+                if (secondsLeft === 0) {
+                    clearInterval(interval);
+                    countdownElement.textContent = "Happy New Year!!!";
+                    setTimeout(() => {
+                        countdownElement.textContent = "Let's Begin the Adventure!";
+                    }, 3000);
+                } else {
+                    secondsLeft--;
+                }
+            }, 1000);
+        }
+
+        // Start countdown when the page loads
+        window.onload = function() {
+            startCountdown();
+        };
+        function goToNextPage() {
+            window.location.href = 'toindex.html';
+        }
+    </script>
+
+
+
+
+</body>
+</html>
